@@ -9,7 +9,9 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hello! Nice to see you here!</h1>
         <p className={styles.description}>
-          I'm unity developer with 3 years of experianse  !! add more content  !!
+         In discussions about whether games are considered art, I would say, "That depends."
+          There are titles that truly are art, and those games serve as inspiration for me to
+           do my best in this industry.
         </p>
         <a href="mailto:jkkorczynski@gmail.com" className={styles.contactBtn}>
           Contact Me

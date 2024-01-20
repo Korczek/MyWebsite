@@ -1,0 +1,52 @@
+@import "../../vars.css";
+
+.container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    padding: 73px;
+    margin-top: 129px;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+.container::before {
+    content: "";
+    background-color: var(--color-secondary);
+    background-size: cover;
+    position: absolute;
+   
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+
+.title {
+    position: middle;
+    color: var(--color-text);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+}
+
+.content {
+    position: center;
+    /* display: flex; */
+    margin-left: 90px;
+    margin-right: 25%;
+    width: 1000px;
+    width: 1220px;
+    height: 700px;
+    flex-direction: row;
+    align-items: center;
+  }

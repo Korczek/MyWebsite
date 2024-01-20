@@ -8,19 +8,20 @@ import { Projects } from "./components/Projects/Projects";
 import { Game } from "./components/DemoGame/Game";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
+
 function App() {
+  const gameLocal = <Game />;
   return (
     <div className={styles.App}>
-      <Game />
       <Navbar />
       <Hero />
       <About />
       <Experience />
       <Projects />
+      {gameLocal}
       <Contact />
       <SpeedInsights />
     </div>
   );
 }
-
 export default App;

@@ -1,52 +1,161 @@
 @import "../../vars.css";
 
-.container {
-    overflow: hidden;
-    position: relative;
-    border-radius: 15px;
-    padding: 73px;
-    margin-top: 129px;
-    z-index: 1;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-.container::before {
-    content: "";
-    background-color: var(--color-secondary);
-    background-size: cover;
-    position: absolute;
-   
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-  }
 
-  .content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
+
+.unityContent {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.text {
+  position: center;
+  color: var(--color-text);
+  font-size: 25px;
+  font-weight: 250;
+  letter-spacing: 1.75px;
+  text-transform: lowercase;
+}
+
+.container {
+  position: relative;
+  border-radius: 15px;
+  padding: 73px;
+  margin-top: 129px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  padding: 2.5%;
+  margin-top: 250px;
+  z-index: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container::before {
+  content: "";
+  background-image: url("/assets/About/DemoScenery.png");
+  background-size: cover;
+  position: absolute;
+
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.45;
+}
 
 .title {
-    position: middle;
-    color: var(--color-text);
-    font-size: 35px;
-    font-weight: 700;
-    letter-spacing: 1.75px;
-    text-transform: uppercase;
+  position: relative;
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
 }
 
 .content {
-    position: center;
-    /* display: flex; */
-    margin-left: 90px;
-    margin-right: 25%;
-    width: 1000px;
-    width: 1220px;
-    height: 700px;
-    flex-direction: row;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.aboutImage {
+  width: 15%;
+}
+
+
+
+.button {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonText {
+  position: center;
+  color: white; /* text color */
+  font-size: 25px;
+  font-weight: 250;
+  letter-spacing: 1.75px;
+
+  /* Button styles */
+  background-color: var(--color-secondary); /* Button color */
+  border: none;
+  border-radius: 10px; /* Adjust the value to control the roundness of corners */
+  padding: 10px 20px; /* Adjust the padding for width and height */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+.buttonText:hover {
+  background-color: var(--color-primary); /* Change the color on hover */
+}
+
+.aboutItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5%;
+  list-style: none;
+  padding: 25px;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
+.aboutItem:hover {
+  background-size: 100% 100%;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
   }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .aboutImage {
+    display: none;
+  }
+
+  .aboutItems {
+    margin-top: 29px;
+  }
+
+  .aboutItem {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.imageList {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageListItem {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-left: 10px;
+}

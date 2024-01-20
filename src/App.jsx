@@ -5,7 +5,7 @@ import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/Projects";
-import { Game } from "./components/DemoGame/Game";
+import Game from "./components/DemoGame/Game";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
@@ -15,10 +15,10 @@ function App() {
     <div className={styles.App}>
       <Navbar />
       <Hero />
-      <About />
+      {gameLocal}
+      {/* <About /> */}
       <Experience />
       <Projects />
-      {gameLocal}
       <Contact />
       <SpeedInsights />
     </div>

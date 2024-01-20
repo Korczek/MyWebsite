@@ -27,7 +27,7 @@ export const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <li>
-            <a href="#about">About</a>
+            <a href="#demo">Demo</a>
           </li>
           <li>
             <a href="#experience">Experience</a>

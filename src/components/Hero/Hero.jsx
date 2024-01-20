@@ -22,8 +22,8 @@ export const Hero = () => {
         alt="Just face of Jakub Korczynski"
         className={styles.heroImg}
       />
-      <div className={styles.topBlur} />
-      <div className={styles.bottomBlur} />
+      {/* <div className={styles.topBlur} /> */}
+      {/* <div className={styles.bottomBlur} /> */}
     </section>
   );
 };

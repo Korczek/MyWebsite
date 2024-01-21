@@ -9,10 +9,11 @@ export const Hero = () => {
       <div className={styles.content}>
 
         <img src={getImageUrl("hero/MordaWKole.png")} alt="Just my face"/>
-        <h1 className={styles.title}>Nice to have you here!<br/>I'm Unity Developer</h1>
+        <h1 className={styles.title}>Nice to have you here!</h1>
 
         <p className={styles.description}>
-          And I dreaming to make most artistic and enjoyable games i can 
+        Gpt named me Full Stack Developer and Artist, but I'm not absolutely sure about that xD<br/>
+          Maybe will be better to just show you what i've crafted :D
         </p>
 
         <div className={styles.contactBtnContainer}>

@@ -8,11 +8,14 @@
 }
 
 .title {
+  margin-top: 25px;
+  margin-bottom: 25px;
   color: var(--color-text);
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .content {
@@ -23,9 +26,10 @@
 }
 
 .skills {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 37px;
 }
 
@@ -56,48 +60,82 @@
   font-weight: 500;
 }
 
-.history {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
 
-.historyItem {
+
+
+
+
+/* NOW GAME RELATED STUFF */
+
+
+
+
+
+.myGamesItem {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 17px;
   background: #19376d;
   background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
-  border-radius: 10px;
-  padding: 24px;
+  padding: 15px;
+  border-radius: 25px;
 }
 
-.historyItem img {
-  width: 50px;
+
+.myGameL {
+  justify-content: center;
 }
 
-.historyItemDetails {
+
+.logoImgContainer {
+  border-radius: 25%;
+  margin: 15px;
+  justify-content: center;
+}
+
+
+.logoImgContainer img {
+  width: 125px;
+  border-radius: 25px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.googleContainer {
+  margin: 5px;
+  justify-content: center;
+}
+
+.googleContainer img {
+  width: 250px;
+}
+
+
+
+
+
+
+/* details section  */
+
+
+.myGamesDetails {
   font-family: var(--font-roboto);
+  max-width: 60%;
 }
 
-.historyItemDetails h3 {
-  font-size: 30px;
+.myGamesDetails h3 {
+  font-size: 50px;
   font-weight: 500;
 }
 
-.historyItemDetails p {
+.myGamesDetails p {
   font-size: 20px;
   font-weight: 300;
-}
 
-.historyItemDetails ul {
-  margin-top: 6px;
-  list-style-position: inside;
-  font-size: 25px;
-  list-style-type: disc;
-  margin-left: 17px;
+  margin-top: 2%;
+
 }
 
 @media screen and (max-width: 830px) {
@@ -113,8 +151,32 @@
     justify-content: center;
   }
 
-  .history {
+  .myGames {
     width: 100%;
     gap: 9px;
+  }
+
+  .myGamesItem {
+    flex-direction: column;
+    background: #19376d;
+    align-items: center;
+    gap: 17px;
+    background: #19376d;
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .myGamesDetails {
+    max-width: 100%;
+  }
+
+  .myGamesDetails h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .myGamesDetails p {
+    font-size: 16px;
+    text-align: center;
   }
 }

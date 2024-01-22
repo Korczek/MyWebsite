@@ -142,6 +142,7 @@ text-align: center;
   background-image: url("/assets/About/DemoScenery.png");
   background-size: cover;
   position: absolute;
+  background-position: center;
 
   z-index: -1;
 

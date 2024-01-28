@@ -12,8 +12,8 @@ export const Hero = () => {
         <h1 className={styles.title}>Nice to have you here!</h1>
 
         <p className={styles.description}>
-        Gpt named me Full Stack Developer and Artist, but I'm not absolutely sure about that xD<br/>
-          Maybe will be better to just show you what i've crafted :D
+          Gpt named me Full Stack Developer and Artist, but I'm not absolutely sure about that<br/>
+          Maybe will be better to just show you what i've crafted
         </p>
 
         <div className={styles.contactBtnContainer}>

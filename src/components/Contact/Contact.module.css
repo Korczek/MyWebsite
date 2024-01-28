@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 100vw;
+  width: 100%;
+  height: 175px;
   padding: 2px 10%;
-  gap: 10px;
 }
 
 .text h2 {
@@ -22,6 +22,7 @@
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .links {
@@ -49,8 +50,9 @@
 
 @media screen and (max-width: 830px) {
   .container {
-    flex-direction: line;
+    flex-direction:column;
     gap: 23px;
+    height: 450px;
   }
 
   .text {
@@ -60,6 +62,8 @@
   }
 
   .links {
+    flex-direction: column;
     align-items: center;
+    
   }
 }

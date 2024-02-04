@@ -51,7 +51,7 @@ const Game = () => {
                     </div>
                     <div className={styles.contentHor2}>
                       <div> {/* image need to be box shaped  */}
-                        <img src="/assets/About/DemoScenery.png" alt="demo screenshot 2" className={styles.imgg} />
+                        <img src="assets/About/DemoScenery.png" alt="demo screenshot 2" className={styles.imgg} />
                       </div>
                       <div className={styles.contentt}> {/* content */}
                         <p>
@@ -80,7 +80,7 @@ const Game = () => {
                           </p>
                         </div>
                         <div> {/* image need to be box shaped  */}
-                          <img src="/assets/About/DemoScenery.png" alt="demo screenshot 2" className={styles.imgg} />
+                          <img src="assets/About/DemoScenery.png" alt="demo screenshot 2" className={styles.imgg} />
                         </div>
                       </div>
 

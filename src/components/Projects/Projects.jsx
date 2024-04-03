@@ -10,11 +10,11 @@ export const Projects = () => {
     return (
         <section id='projects'>
 
-            <h2 className='text-center text-slate-200 text-left text-4xl font-extrabold p-6'>
+            <h2 className='text-center text-slate-200 text-4xl font-extrabold p-6'>
                 PROJECTS
             </h2>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center p-4">
 
                 <div className='flex flex-full p-4 bg-teal-700 rounded-3xl lg:max-w-5xl'>
 
@@ -35,15 +35,15 @@ export const Projects = () => {
                         </div>
                         <div>
 
-                            <h1 className='font-extrabold text-4xl text-white text-slate-200'>
+                            <h1 className='text-center lg:text-left font-extrabold text-4xl text-white text-slate-200'>
                                 Tap Two
                             </h1>
 
-                            <h1 className='font-extrabold text-xl text-slate-200'>
+                            <h1 className='text-center lg:text-left font-extrabold text-xl text-slate-200 pt-1'>
                                 May, 2023
                             </h1>
 
-                            <div className='text-center lg:text-left text-slate-100 text-l pt-6'>
+                            <div className='text-center lg:text-left text-slate-100 text-l p-4'>
 
                                 I developed a game from scratch, handling everything from game mechanics to UI scaling
                                 and implementing features like animations (my own solution), analytics, IronSource, and Google Play

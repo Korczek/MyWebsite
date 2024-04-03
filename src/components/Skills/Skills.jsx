@@ -5,12 +5,12 @@ import { getImageUrl } from "../../utils";
 
 export const Skills = () => {
     return (
-        <section id="skills" className='px-28'>
+        <section id="skills" className=' px-6 lg:px-28'>
             <h2 className='text-center text-slate-200 text-left text-4xl font-extrabold p-6'>
                 SKILLS
             </h2>
 
-            <div className='flex flex-wrap place-items-center justify-center gap-10'>
+            <div className='flex flex-wrap place-items-center justify-center gap-8 lg:gap-10'>
                 {
                     skills.map((skill, id) => {
                         return (
@@ -20,7 +20,7 @@ export const Skills = () => {
                                     src={getImageUrl(skill.imageSrc)} 
                                     alt={skill.title} />
                                 </div>
-                                <p className='text-center text-gray-100 p-2 text-2xl'>
+                                <p className='text-center text-gray-100 pt-2 text-2xl'>
                                     {skill.title}
                                 </p>
                             </div>

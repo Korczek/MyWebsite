@@ -8,11 +8,16 @@ export const Hero = () => {
     <section className={styles.container}>
       <div className={styles.content}>
 
-        <img src={getImageUrl("hero/MordaWKole.png")} alt="Just my face"/>
+        <div class="flex rounded-full bg-gray-500 ">
+
+          text
+        </div> 
+
+        <img src={getImageUrl("hero/MordaWKole.png")} alt="Just my face" />
         <h1 className={styles.title}>Nice to have you here!</h1>
 
         <p className={styles.description}>
-          Gpt named me Full Stack Developer and Artist, but I'm not absolutely sure about that<br/>
+          Gpt named me Full Stack Developer and Artist, but I'm not absolutely sure about that<br />
           Maybe will be better to just show you what i've crafted
         </p>
 

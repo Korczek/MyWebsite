@@ -12,7 +12,7 @@ const gpImgSounce = "https://play.google.com/intl/en_us/badges/static/images/bad
 export const Experience = () => {
   return (
     <section className={styles.container} id="experience">
-      <h2 className={styles.title}>achievements</h2>
+      {/* <h2 className={styles.title}>achievements</h2>
       <div className={styles.content}>
         <div className={styles.skills}>
           {skills.map((skill, id) => {
@@ -26,7 +26,7 @@ export const Experience = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
 
 
       <h2 className={styles.title}>published game</h2>

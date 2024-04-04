@@ -27,7 +27,7 @@ export const Welcome = () => {
                    
                     <div className="w-56 h-56 overflow-hidden rounded-full ">
                         
-                        <img className="w-full border rounded-full"
+                        <img className="w-full border border-teal-500 rounded-full"
                                 src={getImageUrl("hero/MordaWKole.png")}
                                 alt="Thats me" />
                     </div>

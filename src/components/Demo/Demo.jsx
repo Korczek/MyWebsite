@@ -1,19 +1,47 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { getImageUrl } from "../../utils";
+import { flushSync } from "react-dom";
 
 const gamedir = "game/Build";
 
 export const Demo = () => {
-  const { unityProvider, isLoaded, loadingProgression, unload, requestFullscreen } = useUnityContext({
-    loaderUrl: `${gamedir}/game.loader.js`,
-    dataUrl: `${gamedir}/game.data`,
-    frameworkUrl: `${gamedir}/game.framework.js`,
-    codeUrl: `${gamedir}/game.wasm`,
-  });
-  const [showDemo, setShowDemo] = useState(true);
 
+  const { unityProvider, isLoaded, loadingProgression, addEventListener, removeEventListener,
+    unload, requestFullscreen } = useUnityContext({
+      loaderUrl: `${gamedir}/game.loader.js`,
+      dataUrl: `${gamedir}/game.data`,
+      frameworkUrl: `${gamedir}/game.framework.js`,
+      codeUrl: `${gamedir}/game.wasm`,
+    }
+  );
+  
+  const [showDemo, setShowDemo] = useState(true);
   const loadingPercentage = Math.round(loadingProgression * 100);
+
+  const handleFullscreen = useCallback((fScr) => {
+    switchFullscreen(!fScr);
+  });
+
+  useEffect(() => {
+    addEventListener("Fullscreen", handleFullscreen);
+    return () => {
+      removeEventListener("FullScreen", handleFullscreen);
+    }
+  }, [addEventListener, removeEventListener, handleFullscreen]);
+
+
+
+  const handleBack = useCallback(() => {
+    handleClickBack();
+  });
+
+  useEffect(() => {
+    addEventListener("DoExit", handleBack);
+    return () => {
+      removeEventListener("DoExit", handleBack);
+    }
+  }, [addEventListener, removeEventListener, handleBack]);
 
   const handleRunDemoClick = () => {
     setShowDemo(false);
@@ -24,9 +52,10 @@ export const Demo = () => {
     setShowDemo(true);
   }
 
-  async function handleClickEnterFullscreen() {
-    requestFullscreen(true);
+  async function switchFullscreen(value) {
+    requestFullscreen(value);
   }
+
 
   return (
     <section id="demo" className="text-slate-200">
@@ -43,16 +72,18 @@ export const Demo = () => {
 
             <div>
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className=" w-full lg:w-1/2 p-6 bg-teal-500 rounded-3xl">
-                  <img src={getImageUrl("myGames/Scr.png")} alt="" />
+                <div className=" w-full lg:w-1/2 p-6 bg-teal-500 rounded-3xl content-center">
+                  <img 
+                  className="rounded-3xl"
+                  src={getImageUrl("myGames/ScrSht.png")} alt="" />
                 </div>
 
                 <div className="flex w-full lg:w-1/2 p-4 bg-teal-500 text-slate-100 rounded-3xl">
                   In this demo, you'll see some animations created with DoTween (About) and a more
                   complex animation system created through a conditional loop on a curve calculated
                   by points in world space (contact).
-                   <br /><br />
-                    The first game was inspired by "Toon Blast".
+                  <br /><br />
+                  The first game was inspired by "Toon Blast".
                   On touch, actions are driven by a recurrent script that maps all objects with matching
                   types by their neighbors and neighbors' neighbors. The board is generated from an
                   image where each color is represented as a different type.
@@ -95,7 +126,6 @@ export const Demo = () => {
                   </div>
                 )
               }
-
               <Unity
                 className=" w-full lg:w-[960px] lg:h-[600px] rounded-3xl "
                 style={{ visibility: isLoaded ? "visible" : "hidden" }}
@@ -113,7 +143,7 @@ export const Demo = () => {
                 <div>
                   <button className="text-center text- bg-teal-700 hover:bg-teal-600 
                   rounded-full p-4"
-                    onClick={handleClickEnterFullscreen}>
+                    onClick={() => { switchFullscreen(true); }}>
                     Fullscreen
                   </button>
                 </div>

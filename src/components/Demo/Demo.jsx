@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { getImageUrl } from "../../utils";
-import { flushSync } from "react-dom";
 
 const gamedir = "game/Build";
 
@@ -13,11 +12,19 @@ export const Demo = () => {
       dataUrl: `${gamedir}/game.data`,
       frameworkUrl: `${gamedir}/game.framework.js`,
       codeUrl: `${gamedir}/game.wasm`,
+      productName: "Jakub Korczyński Demo",
+      companyName: "Fidgety Games Jakub Korczyński",
+      productVersion: "v0.1",
     }
   );
   
   const [showDemo, setShowDemo] = useState(true);
+  const [alertDisplayed, setAlertDisplayed] = useState(false);
+
   const loadingPercentage = Math.round(loadingProgression * 100);
+
+
+
 
   const handleFullscreen = useCallback((fScr) => {
     switchFullscreen(!fScr);
@@ -29,6 +36,9 @@ export const Demo = () => {
       removeEventListener("FullScreen", handleFullscreen);
     }
   }, [addEventListener, removeEventListener, handleFullscreen]);
+
+
+
 
 
 
@@ -50,11 +60,26 @@ export const Demo = () => {
   async function handleClickBack() {
     await unload();
     setShowDemo(true);
+    setAlertDisplayed(false);
   }
 
   async function switchFullscreen(value) {
     requestFullscreen(value);
   }
+
+
+
+  function getPageWidth() {
+    return (window.innerWidth)
+  }
+  function pushWindowAlert() {
+    if (!alertDisplayed) {
+      setAlertDisplayed(true);
+      window.alert("you have small device. If you want to be able to see scene play it on desctop or place your phone in horizontal position ! ")
+    }
+  }
+
+
 
 
   return (
@@ -108,6 +133,8 @@ export const Demo = () => {
 
             <div className="flex flex-col max-w-screen-xl mx-auto justify-center content-center p-1 bg-teal-500
              rounded-3xl">
+
+              { getPageWidth() <= 768 ? pushWindowAlert() : (null) }
 
               {isLoaded ? (null) :
                 (

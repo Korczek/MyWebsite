@@ -75,9 +75,10 @@ export const Demo = () => {
   function pushWindowAlert() {
     if (!alertDisplayed) {
       setAlertDisplayed(true);
-      window.alert("you have small device. If you want to be able to see scene play it on desctop or place your phone in horizontal position ! ")
+      window.alert("You have a small device. If you want to view a scene, play it on your desktop or place your phone horizontally.")
     }
   }
+
 
 
 
